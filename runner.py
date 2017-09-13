@@ -8,9 +8,37 @@ application = default_app()
 def home():
 	return template("index.html")
 
-@route("/watch")
-def watch():
-	return template("watch.html")
+@route("/list")
+def list():
+	return template("AniList.html")
+
+@route("/Boruto")
+def boruto():
+	return template("Boruto.html")
+
+@route("/Boku")
+def boku():
+	return template("Boku.html")
+
+@route("/OPM")
+def opm():
+	return template("OPM.html")
+
+@route("/OnePiece")
+def onepiece():
+	return template("OnePiece.html")
+
+@route("/DbSuper")
+def dbsuper():
+	return template("DbSuper.html")
+
+@route("/Akame")
+def akame():
+	return template("Akame.html")
+
+@route("/Noragami")
+def noragami():
+	return template("Noragami.html")
 
 @route("/anotherPage")
 def anoPage():
@@ -18,7 +46,14 @@ def anoPage():
 
 #specifying the path for the file
 @route('/<filepath:path>')
-@route('/watch/<filepath:path>')
+@route('/list/<filepath:path>')
+@route('/Boruto/<filepath:path>')
+@route('/Boku/<filepath:path>')
+@route('/OPM/<filepath:path>')
+@route('/OnePiece/<filepath:path>')
+@route('/DbSuper/<filepath:path>')
+@route('/Akame/<filepath:path>')
+@route('/Noragami/<filepath:path>')
 @route('/anotherPage/<filepath:path>')
 def server_static(filepath):
 	return static_file(filepath, root='./static/')
