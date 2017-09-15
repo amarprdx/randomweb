@@ -44,6 +44,10 @@ def noragami():
 def anoPage():
 	return template("anotherPage.html")
 
+@route('/favicon.ico')
+def get_favicon():
+	return server_static('/static/sharingan.ico')
+
 #specifying the path for the file
 @route('/<filepath:path>')
 @route('/list/<filepath:path>')
